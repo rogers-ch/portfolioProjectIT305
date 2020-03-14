@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Created by:                Corey Rogers
+    Date submitted (v1.0):     01/30/2020
+    Date submitted (v2.0):     02/13/2020
+    Date submitted (v3.0):     02/21/2020
+    Date submitted (v4.0):     02/28/2020
+    Date submitted (v5.0):     03/06/2020
+    Assignment:                Guestbook Form
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corey's Guestbook</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/guestbook.css">
+    <link rel="icon" type="image/png" href="images/open-book.png">
+
+</head>
+<body>
+<div id="main" class="container pt-3">
+
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to my guestbook!</h1>
+    <p class="lead">My name is Corey Rogers.  I use this guestbook to stay in touch with my professional
+        contacts.</p>
+    <hr class="my-4">
+    <p>Please sign my guestbook by completing the form below so I can communicate with you easily.</p>
+</div>
+<nav aria-label="breadcrumb" class="breadcrumb d-flex justify-content-between mb-0">
+    <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="https://chrogers.greenriverdev.com">Portfolio Home</a></li>
+        <li class="breadcrumb-item active">Guestbook Home</li>
+    </ol>
+</nav>
+
+                                <!-- Contact Form -->
+<!-- Cite: Starting contact form HTML taken from the Start Bootstrap Agency Template
+(available at https://startbootstrap.com/previews/agency/)
+The MIT License (MIT)
+Copyright (c) 2013-2019 Blackrock Digital LLC
+-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Complete the form to sign my guestbook</h2>
+
+            </div>
+        </div>
+
+        <hr>
+
+                                        <!-- Contact Info -->
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="guestForm" name="guestForm" action="guestbookConfirm.php" method="POST" novalidate="novalidate">
+                    <div class="h4 text-center pb-3">Contact Info</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input class="form-control" id="firstName" name="firstName" type="text" placeholder="First Name">
+                                <p class="help-block text-danger small err" id="errFirstName">*Required field</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Last Name">
+                                <p class="help-block text-danger small err" id="errLastName">*Required field</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email">
+                                <p class="help-block text-danger small err errRequired mb-0" id="errEmailRequired">*Required field</p>
+                                <p class="help-block text-danger small err mb-0" id="errEmailIncludes">*Email address must contain
+                                    "@" and "."</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title</label>
+                                <input class="form-control" id="jobTitle" name="jobTitle" type="text" placeholder="Job Title">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input class="form-control" id="company" name="company" type="text" placeholder="Company">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedIn">LinkedIn URL</label>
+                                <input class="form-control" id="linkedIn" name="linkedIn" type="text" placeholder="LinkedIn URL">
+                                <p class="help-block text-danger small err" id="errLinkedIn">*Address must start with
+                                    "http" and end with ".com"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                                    <!-- How we met -->
+                    <div class="h4 text-center pb-3">How We Met</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="howMet">How did we meet?</label>
+                                <select class="form-control" id="howMet" name="howMet" tabindex="16">
+                                    <option>Please Select</option>
+                                    <option>Meetup Group</option>
+                                    <option>Job Fair</option>
+                                    <option>School</option>
+                                    <option>Work</option>
+                                    <option>We haven't met yet</option>
+                                    <option>Other</option>
+                                </select>
+                                <p class="help-block text-danger small err" id="errHowMet">*Required field</p>
+                            </div>
+                            <div class="form-group conditional" id="ifOtherBox">
+                                <label for="metOther">If other (please specify)</label>
+                                <input class="form-control" id="metOther" name="metOther" type="text" placeholder="">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                                    <!-- Mailing List -->
+                    <div class="h4 text-center pb-3">Mailing List</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="addToList" name="addToList">
+                                <label class="form-check-label" for="addToList">Please add me to your mailing list!</label>
+                            </div>
+                            <div class="form-group conditional" id="chooseEmailFormat">
+                                <label >Please choose an email format:</label>
+                                <div class="form-check" >
+                                    <input class="form-check-input" type="radio" name="format" id="HTML" value="HTML" >
+                                    <label class="form-check-label" for="HTML">
+                                        HTML
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="format" id="Text" value="Text" >
+                                    <label class="form-check-label" for="Text" >
+                                        Text
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr>
+                                <!-- Submit button -->
+                    <div class="row">
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center pb-3">
+                            <div id="success"></div>
+                            <button id="submitBtn" class="btn btn-secondary btn-lg text-uppercase" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<footer class="mt-5 py-4">
+    <div class="text-center">Icon made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+    <div class="float-right p-5">
+        <a href="guestbookAdmin.php">
+            Admin
+        </a>
+    </div>
+</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="scripts/guestbook.js"></script>
+</body>
+</html>
